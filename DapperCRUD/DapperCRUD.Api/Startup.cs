@@ -37,9 +37,8 @@ namespace DapperCRUD.Api
         {
             var connectionInfo = GetConnectionStringAndAssemblyName();
 
-            //builder.RegisterModule(new TrainingModule(connectionInfo.connectionString,
-            //    connectionInfo.migrationAssemblyName));
-            builder.RegisterModule(new ApiModule());
+            builder.RegisterModule(new ApiModule(connectionInfo.connectionString,
+                connectionInfo.migrationAssemblyName));
         }
         private (string connectionString, string migrationAssemblyName) GetConnectionStringAndAssemblyName()
         {
@@ -55,17 +54,6 @@ namespace DapperCRUD.Api
             var connectionInfo = GetConnectionStringAndAssemblyName();
 
             services.AddHttpContextAccessor();
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowSites",
-                    builder =>
-                    {
-                        builder.WithOrigins("https://localhost:44332")
-                           .AllowAnyMethod()
-                           .AllowAnyHeader();
-                    });
-            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
