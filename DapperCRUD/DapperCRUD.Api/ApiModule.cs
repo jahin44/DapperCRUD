@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using DapperCRUD.Api.Repository;
+using DapperCRUD.Api.Service;
 
 namespace DapperCRUD.Api
 {
@@ -15,6 +16,13 @@ namespace DapperCRUD.Api
         }
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<ProductService>().AsSelf()
+                .WithParameter("connectionString", _connectionString)
+                .InstancePerLifetimeScope();
+            builder.RegisterType<ProductService>().As<IProductService>()
+                .WithParameter("connectionString", _connectionString)
+                .InstancePerLifetimeScope();
+
             builder.RegisterType<ProductRepository>().AsSelf()
                 .WithParameter("connectionString", _connectionString)
                 .InstancePerLifetimeScope();

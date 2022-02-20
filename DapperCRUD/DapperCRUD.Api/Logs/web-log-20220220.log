@@ -100,3 +100,77 @@ ClientConnectionId:9dfbd20e-d019-4891-9d8d-eb723c94aa4a
 Error Number:-2146893019,State:0,Class:20
 2022-02-20 03:08:28.799 +06:00 [INF] Application Starting up
 2022-02-20 03:08:59.558 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 11:09:51.036 +06:00 [INF] Application Starting up
+2022-02-20 11:10:55.716 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 12:10:57.681 +06:00 [INF] Application Starting up
+2022-02-20 12:11:13.043 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 12:17:32.318 +06:00 [INF] Application Starting up
+2022-02-20 12:17:57.814 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 12:21:34.489 +06:00 [INF] Application Starting up
+2022-02-20 12:21:50.525 +06:00 [INF] Application Starting up
+2022-02-20 12:21:57.602 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 12:58:37.203 +06:00 [INF] Application Starting up
+2022-02-20 12:59:10.465 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 13:01:59.363 +06:00 [INF] Application Starting up
+2022-02-20 13:02:12.170 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 13:08:17.541 +06:00 [INF] Application Starting up
+2022-02-20 13:08:38.203 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 14:05:58.259 +06:00 [INF] Application Starting up
+2022-02-20 14:05:58.809 +06:00 [FTL] Application start-up failed
+System.ArgumentException: The type 'DapperCRUD.Api.Service.ProductService' is not assignable to service 'DapperCRUD.Api.IProductService'.
+   at Autofac.Builder.RegistrationBuilder.CreateRegistration(Guid id, RegistrationData data, IInstanceActivator activator, IResolvePipelineBuilder pipelineBuilder, Service[] services, IComponentRegistration target)
+   at Autofac.Builder.RegistrationBuilder.CreateRegistration[TLimit,TActivatorData,TSingleRegistrationStyle](IRegistrationBuilder`3 builder)
+   at Autofac.Builder.RegistrationBuilder.RegisterSingleComponent[TLimit,TActivatorData,TSingleRegistrationStyle](IComponentRegistryBuilder cr, IRegistrationBuilder`3 builder)
+   at Autofac.RegistrationExtensions.<>c__DisplayClass37_0`1.<RegisterType>b__0(IComponentRegistryBuilder cr)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.UpdateRegistry(IComponentRegistryBuilder componentRegistry)
+   at Autofac.Module.Configure(IComponentRegistryBuilder componentRegistry)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProviderFactory.CreateServiceProvider(ContainerBuilder containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at DapperCRUD.Api.Program.Main(String[] args) in D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Api\Program.cs:line 33
+2022-02-20 14:07:13.992 +06:00 [INF] Application Starting up
+2022-02-20 14:07:35.477 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 14:07:35.574 +06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'DapperCRUD.Api.IProductService' while attempting to activate 'DapperCRUD.Api.Controllers.ProductController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method304(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-02-20 14:10:13.795 +06:00 [INF] Application Starting up
+2022-02-20 14:10:14.282 +06:00 [FTL] Application start-up failed
+System.ArgumentException: The type 'DapperCRUD.Api.Service.ProductService' is not assignable to service 'DapperCRUD.Api.IProductService'.
+   at Autofac.Builder.RegistrationBuilder.CreateRegistration(Guid id, RegistrationData data, IInstanceActivator activator, IResolvePipelineBuilder pipelineBuilder, Service[] services, IComponentRegistration target)
+   at Autofac.Builder.RegistrationBuilder.CreateRegistration[TLimit,TActivatorData,TSingleRegistrationStyle](IRegistrationBuilder`3 builder)
+   at Autofac.Builder.RegistrationBuilder.RegisterSingleComponent[TLimit,TActivatorData,TSingleRegistrationStyle](IComponentRegistryBuilder cr, IRegistrationBuilder`3 builder)
+   at Autofac.RegistrationExtensions.<>c__DisplayClass37_0`1.<RegisterType>b__0(IComponentRegistryBuilder cr)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.UpdateRegistry(IComponentRegistryBuilder componentRegistry)
+   at Autofac.Module.Configure(IComponentRegistryBuilder componentRegistry)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProviderFactory.CreateServiceProvider(ContainerBuilder containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at DapperCRUD.Api.Program.Main(String[] args) in D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Api\Program.cs:line 33
+2022-02-20 14:11:05.888 +06:00 [INF] Application Starting up
+2022-02-20 14:11:16.045 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 14:32:58.147 +06:00 [INF] Application Starting up
+2022-02-20 14:33:09.944 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-02-20 14:37:41.442 +06:00 [INF] Application Starting up
+2022-02-20 14:53:04.238 +06:00 [INF] Application Starting up
+2022-02-20 14:54:03.077 +06:00 [WRN] Failed to determine the https port for redirect.

@@ -11,53 +11,85 @@ namespace DapperCRUD.Api.Controllers
     public class ProductController : Controller
     {
 
-        private readonly IRepository productRepository;
+        private readonly IProductService _productService;
         private readonly ILogger<ProductController> _logger;
         private readonly ILifetimeScope _scope;
 
         public ProductController(
-            IRepository repository,
+            IProductService productService,
             ILifetimeScope scope,
             ILogger<ProductController> logger)
         {
-            productRepository = repository;
+            _productService = productService;
             _logger = logger;
             _scope = scope;
         }
 
         [HttpGet]
-        [Route("getall")]
         public IEnumerable<Product> Get()
         {
-            return productRepository.GetAll();
+            return _productService.GetAll();
         }
 
         [HttpGet("{id}")]
         public Product Get(int id)
         {
-            return productRepository.GetById(id);
+            return _productService.GetById(id);
         }
 
         [HttpPost]
-        public void Post([FromBody] Product prod)
+        public string Post([FromBody] Product product)
         {
             if (ModelState.IsValid)
-                productRepository.Add(prod);
+            {
+                try
+                {
+                    _productService.Add(product);
+                    return "Done";
+                }
+                catch
+                {
+                    return "ERROR" ;
+                }
+            }
+            else { return "Model Data Error"; }
         }
 
         [HttpPut]
-        public void Put([FromBody] Product prod)
+        public string Put([FromBody] Product product)
         {
-            //prod.ID = id;
             if (ModelState.IsValid)
-                productRepository.Update(prod);
+            {
+                try
+                {
+                    _productService.Update(product);
+                    return "Done";
+                }
+                catch
+                {
+                    return "ERROR";
+                }
+            }
+            else { return "Model Data Error"; }
         }
 
         [HttpPost]
         [Route("delete")]
-        public void Delete([FromBody] Product prod)
+        public string Delete([FromBody] Product product)
         {
-            productRepository.Delete(prod.ID);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _productService.Delete(product.ID);
+                    return "Done";
+                }
+                catch
+                {
+                    return "ERROR";
+                }
+            }
+            else { return "Model Data Error"; }
         }
     }
 }
