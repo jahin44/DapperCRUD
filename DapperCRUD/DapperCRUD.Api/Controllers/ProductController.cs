@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using DapperCRUD.Api.Repository;
+using DapperCRUD.Data.Entityes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -37,6 +37,12 @@ namespace DapperCRUD.Api.Controllers
             return _productService.GetById(id);
         }
 
+        //[HttpGet("{productName}")]
+        //public IEnumerable<Product> Get(string ProductName, int Id)
+        //{
+        //    return _productService.GetByName(ProductName);
+        //}
+
         [HttpPost]
         public string Post([FromBody] Product product)
         {
@@ -48,7 +54,7 @@ namespace DapperCRUD.Api.Controllers
                     return "Done";
                 }
                 catch
-                {
+                {   
                     return "ERROR" ;
                 }
             }
@@ -75,13 +81,13 @@ namespace DapperCRUD.Api.Controllers
 
         [HttpPost]
         [Route("delete")]
-        public string Delete([FromBody] Product product)
+        public string Delete([FromBody] int Id)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _productService.Delete(product.ID);
+                    _productService.Delete(Id);
                     return "Done";
                 }
                 catch

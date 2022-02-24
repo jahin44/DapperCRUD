@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DapperCRUD.Data.Entityes;
+using System.Collections.Generic;
 
 namespace DapperCRUD.Api
 {
@@ -6,8 +7,9 @@ namespace DapperCRUD.Api
     {
         IEnumerable<Product> GetAll();
         Product GetById(int id);
+        IEnumerable<Product> GetByName(string productName);
         void Add(Product prod);
-        void Update(Product prod);
+        void Update(Product product);
         void Delete(int ID);
 
     }

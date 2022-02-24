@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using DapperCRUD.Data.Entityes;
+using DapperCRUD.Data.UnitOfWorks;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Data;
@@ -8,69 +10,43 @@ namespace DapperCRUD.Api.Service
 {
     public class ProductService : IProductService
     {
-        private string _connectionString;
+        private readonly UnitOfWork _unitOfWork;
 
-        public ProductService(string connectionString)
+        public ProductService(UnitOfWork unitOfWork)
         {
-            _connectionString = connectionString;
-        }
-        //Perist Security Info=False;Initial Catalog = Product;
-        public IDbConnection Connection
-        {
-            get
-            {
-                return new SqlConnection(_connectionString);
-            }
+            _unitOfWork = unitOfWork;
         }
 
-        public void Add(Product prod)
+        public void Add(Product product)
         {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = @"INSERT INTO Product (ID,ProductName,Quantity,Price) VALUES(@ID,@ProductName,@Quantity,@Price)";
-                dbConnection.Open();
-                dbConnection.Execute(sQuery, prod);
-            }
+            _unitOfWork.ProductRepository.Add(product);
+            _unitOfWork.Commit();       
         }
 
         public IEnumerable<Product> GetAll()
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = @"SELECT * FROM Product";
-                dbConnection.Open();
-                return dbConnection.Query<Product>(sQuery);
-            }
+        {            
+            return _unitOfWork.ProductRepository.All();
         }
 
         public Product GetById(int id)
         {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = @"SELECT * FROM Product WHERE ID=@Id";
-                dbConnection.Open();
-                return dbConnection.Query<Product>(sQuery, new { Id = id }).FirstOrDefault();
-            }
+            return _unitOfWork.ProductRepository.Find(id);
+        }
+        public IEnumerable<Product> GetByName(string productName)
+        {
+            return _unitOfWork.ProductRepository.FindByName(productName);
         }
 
         public void Delete(int id)
         {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = @"DELETE FROM Product WHERE ID=@Id";
-                dbConnection.Open();
-                dbConnection.Execute(sQuery, new { Id = id });
-            }
+            _unitOfWork.ProductRepository.Delete(id);
+            _unitOfWork.Commit();        
         }
 
-        public void Update(Product prod)
+        public void Update(Product product)
         {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = @"UPDATE Product SET ProductName=@ProductName,Quantity=@Quantity,Price=@Price WHERE ID=@Id";
-                dbConnection.Open();
-                dbConnection.Query(sQuery, prod);
-            }
+            _unitOfWork.ProductRepository.Update(product);
+            _unitOfWork.Commit();
         }
     }
 }

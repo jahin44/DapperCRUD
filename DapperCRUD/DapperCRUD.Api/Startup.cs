@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DapperCRUD.Data;
 
 namespace DapperCRUD.Api
 {
@@ -39,6 +40,9 @@ namespace DapperCRUD.Api
 
             builder.RegisterModule(new ApiModule(connectionInfo.connectionString,
                 connectionInfo.migrationAssemblyName));
+            builder.RegisterModule(new DataModule(connectionInfo.connectionString,
+                            connectionInfo.migrationAssemblyName));
+
         }
         private (string connectionString, string migrationAssemblyName) GetConnectionStringAndAssemblyName()
         {
