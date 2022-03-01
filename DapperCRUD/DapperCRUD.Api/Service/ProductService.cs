@@ -23,9 +23,26 @@ namespace DapperCRUD.Api.Service
             _unitOfWork.Commit();       
         }
 
-        public IEnumerable<Product> GetAll()
-        {            
-            return _unitOfWork.ProductRepository.All();
+        public DataTable GetAll()
+        {
+            var entities =_unitOfWork.ProductRepository.All();
+            var table = new DataTable();
+
+            table.Columns.Add("Id", typeof(int));
+            table.Columns.Add("Product", typeof(string));
+            table.Columns.Add("Quantity", typeof(int));
+            table.Columns.Add("Price", typeof(int));
+
+            foreach (var entity in entities)
+            {
+                var row = table.NewRow();
+                row["Id"] = entity.Id;
+                row["Product"] = entity.ProductName.ToString();
+                row["Quantity"] = entity.Quantity;
+                row["Price"] = entity.Price;
+                table.Rows.Add(row);
+            }
+            return table;
         }
 
         public Product GetById(int id)

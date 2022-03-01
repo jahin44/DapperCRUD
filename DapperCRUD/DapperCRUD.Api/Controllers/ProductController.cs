@@ -3,6 +3,7 @@ using DapperCRUD.Data.Entityes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DapperCRUD.Api.Controllers
 {
@@ -26,9 +27,9 @@ namespace DapperCRUD.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public JsonResult Get()
         {
-            return _productService.GetAll();
+            return new JsonResult(_productService.GetAll());
         }
 
         [HttpGet("{id}")]

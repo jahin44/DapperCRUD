@@ -17,25 +17,25 @@ data-bs-target="#exampleModal"
             <div class="d-flex flex-row">
 
             <input class="form-control m-2"
-                v-model="ProductIdFilter"
+                v-model="IdFilter"
                 v-on:keyup="FilterFn()"
                 placeholder="Filter">
 
                 <button type="button" class="btn btn-light"
-                @click="sortResult('ProductId',true)">
+                @click="sortResult('Id',true)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
                 </svg>
                 </button>
 
                 <button type="button" class="btn btn-light"
-                @click="sortResult('ProductId',false)">
+                @click="sortResult('Id',false)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
                 <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
                 </svg>
                 </button>
             </div>
-            ProductId
+            Id
         </th>
         <th>
 
@@ -70,7 +70,7 @@ data-bs-target="#exampleModal"
 </thead>
 <tbody>
     <tr v-for="dep in Products">
-        <td>{{dep.ProductId}}</td>
+        <td>{{dep.Id}}</td>
         <td>{{dep.ProductName}}</td>
         <td>
             <button type="button"
@@ -83,7 +83,7 @@ data-bs-target="#exampleModal"
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                 </svg>
             </button>
-            <button type="button" @click="deleteClick(dep.ProductId)"
+            <button type="button" @click="deleteClick(dep.Id)"
             class="btn btn-light mr-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
@@ -114,11 +114,11 @@ data-bs-target="#exampleModal"
         </div>
 
         <button type="button" @click="createClick()"
-        v-if="ProductId==0" class="btn btn-primary">
+        v-if="Id==0" class="btn btn-primary">
         Create
         </button>
         <button type="button" @click="updateClick()"
-        v-if="ProductId!=0" class="btn btn-primary">
+        v-if="Id!=0" class="btn btn-primary">
         Update
         </button>
 
@@ -139,9 +139,9 @@ data(){
         Products:[],
         modalTitle:"",
         ProductName:"",
-        ProductId:0,
+        Id:0,
         ProductNameFilter:"",
-        ProductIdFilter:"",
+        IdFilter:"",
         ProductsWithoutFilter:[]
     }
 },
@@ -155,12 +155,12 @@ methods:{
     },
     addClick(){
         this.modalTitle="Add Product";
-        this.ProductId=0;
+        this.Id=0;
         this.ProductName="";
     },
     editClick(dep){
         this.modalTitle="Edit Product";
-        this.ProductId=dep.ProductId;
+        this.Id=dep.Id;
         this.ProductName=dep.ProductName;
     },
     createClick(){
@@ -174,7 +174,7 @@ methods:{
     },
     updateClick(){
         axios.put(variables.API_URL+"Product",{
-            ProductId:this.ProductId,
+            Id:this.Id,
             ProductName:this.ProductName
         })
         .then((response)=>{
@@ -194,13 +194,13 @@ methods:{
 
     },
     FilterFn(){
-        var ProductIdFilter=this.ProductIdFilter;
+        var IdFilter=this.IdFilter;
         var ProductNameFilter=this.ProductNameFilter;
 
         this.Products=this.ProductsWithoutFilter.filter(
             function(el){
-                return el.ProductId.toString().toLowerCase().includes(
-                    ProductIdFilter.toString().trim().toLowerCase()
+                return el.Id.toString().toLowerCase().includes(
+                    IdFilter.toString().trim().toLowerCase()
                 )&&
                 el.ProductName.toString().toLowerCase().includes(
                     ProductNameFilter.toString().trim().toLowerCase()

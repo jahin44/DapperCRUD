@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DapperCRUD.Data;
+using Newtonsoft.Json.Serialization;
 
 namespace DapperCRUD.Api
 {
@@ -57,9 +58,34 @@ namespace DapperCRUD.Api
         {
             var connectionInfo = GetConnectionStringAndAssemblyName();
 
+            /*services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSites",
+                    builder =>
+                    {
+                        builder.WithOrigins("https://localhost:44332", "http://localhost:8081/")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                    });
+            });*/
+
+
+            //JSON Serializer
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+                .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
+                = new DefaultContractResolver());
+
             services.AddHttpContextAccessor();
 
             services.AddControllers();
+            services.AddCors(option =>
+            {
+                option.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DapperCRUD.Api", Version = "v1" });
@@ -70,6 +96,7 @@ namespace DapperCRUD.Api
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+            app.UseCors();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

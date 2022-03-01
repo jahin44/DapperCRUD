@@ -1,11 +1,12 @@
 ﻿using DapperCRUD.Data.Entityes;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DapperCRUD.Api
 {
     public interface IProductService
     {
-        IEnumerable<Product> GetAll();
+        DataTable GetAll();
         Product GetById(int id);
         IEnumerable<Product> GetByName(string productName);
         void Add(Product prod);
