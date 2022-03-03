@@ -1,0 +1,12 @@
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\bin\Debug\net5.0\DapperCRUD.Data.deps.json
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\bin\Debug\net5.0\DapperCRUD.Data.dll
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\bin\Debug\net5.0\DapperCRUD.Data.pdb
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\DapperCRUD.Data.csproj.AssemblyReference.cache
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\DapperCRUD.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\DapperCRUD.Data.AssemblyInfoInputs.cache
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\DapperCRUD.Data.AssemblyInfo.cs
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\DapperCRUD.Data.csproj.CoreCompileInputs.cache
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\DapperCRUD.Data.dll
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\refint\DapperCRUD.Data.dll
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\DapperCRUD.Data.pdb
+D:\BRACNet\DapperCRUD\DapperCRUD\DapperCRUD.Data\obj\Debug\net5.0\ref\DapperCRUD.Data.dll

@@ -33,8 +33,8 @@ export default{
         headers: { 'Access-Control-Allow-Origin': '*' },
     })    
         .then((resp)=>{
-            this.list=resp.data.data;
-            console.warn(resp.data.data)
+            this.list=resp.data;
+            console.warn(resp.data)
         })
     }
 }

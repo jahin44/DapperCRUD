@@ -20,12 +20,12 @@ namespace DapperCRUD.Api.Service
         public void Add(Product product)
         {
             _unitOfWork.ProductRepository.Add(product);
-            _unitOfWork.Commit();       
+            _unitOfWork.Commit();
         }
 
         public DataTable GetAll()
         {
-            var entities =_unitOfWork.ProductRepository.All();
+            var entities = _unitOfWork.ProductRepository.All();
             var table = new DataTable();
 
             table.Columns.Add("Id", typeof(int));
@@ -57,7 +57,7 @@ namespace DapperCRUD.Api.Service
         public void Delete(int id)
         {
             _unitOfWork.ProductRepository.Delete(id);
-            _unitOfWork.Commit();        
+            _unitOfWork.Commit();
         }
 
         public void Update(Product product)
