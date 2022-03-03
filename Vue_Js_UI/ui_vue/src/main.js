@@ -3,12 +3,14 @@ import 'mutationobserver-shim'
 import Vue from 'vue'
 import './plugins/bootstrap-vue'
 import App from './App.vue'
-import router from './routers'
+import router from './router'
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
-}).use(router)
-.$mount('#app')
+  el: '#app',
+  router,
+  template: '<App/>',
+  components:{App}
+})
 

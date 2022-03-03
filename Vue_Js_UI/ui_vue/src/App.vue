@@ -1,12 +1,15 @@
 <template>
-<router-view/>
+<div id = "app">
+  <h1>Hello</h1>
+  <router-view/>
+</div>
 </template>
 
 <script>
 //import Product from './components/Product.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   // components: {
   //   Product
   // }

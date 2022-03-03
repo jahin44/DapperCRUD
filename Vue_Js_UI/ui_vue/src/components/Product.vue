@@ -12,7 +12,7 @@ export default{
     name:"ProductList",
     data(){
         return{       
-        fields: ['Product', 'Quantity', 'Price','Action'],
+        fields: ['Product', 'Quantity', 'Price', 'DateTime','Action'],
         list:undefined
 }
     },
