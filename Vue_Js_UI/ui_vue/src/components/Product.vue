@@ -1,34 +1,48 @@
 <template>
-    <div>
-    <h1>Product </h1>
+  <div>
+    <h1>Product</h1>
+    <nav>
+      <ul>
+        <button @click="AddProduct">AddProduct</button>
+        <button @click="UpdateProduct">UpdateProduct</button>
+        <button @click="DeleteProduct">DeleteProduct</button>
+      </ul>
+    </nav>
     <b-table striped hover :items="list" :fields="fields"></b-table>
-    </div>
+  </div>
 </template>
 <script>
-import axios from 'axios'
+import axios from "axios";
 // import VueAxios from 'vue-axios'
 // Vue.useAttrs(VueAxios.axios)
-export default{
-    name:"ProductList",
-    data(){
-        return{       
-        fields: ['Product', 'Quantity', 'Price', 'DateTime','Action'],
-        list:undefined
-}
+export default {
+  name: "list_id",
+  data() {
+    return {
+      fields: ["Product", "Quantity", "Price", "DateTime", "Action"],
+      list: undefined,
+    };
+  },
+  mounted() {
+    // axios.defaults.headers.get['Access-Control-Allow-Origin'] ='*';
+    axios
+      .get("http://localhost:50370/api/product", {
+        method: "GET",
+        mode: "cors",
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+      .then((resp) => {
+        this.list = resp.data;
+        console.warn(resp.data);
+      });
+  },
+  method: {
+    AddProduct() {
+      this.$router.push({ name: "AddProduct" });
     },
-    mounted(){
-        // axios.defaults.headers.get['Access-Control-Allow-Origin'] ='*';
-        axios
-        .get('http://localhost:50370/api/product', {
-        method: 'GET',
-        mode: 'cors',
-        headers: { 'Access-Control-Allow-Origin': '*' },
-    })    
-        .then((resp)=>{
-            this.list=resp.data;
-            console.warn(resp.data)
-        })
-    }
-}
+    UpdateProduct() {
+      this.$router.push({ name: "UpdateProduct" });
+    },
+  },
+};
 </script>
-

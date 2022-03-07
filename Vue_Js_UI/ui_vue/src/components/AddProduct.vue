@@ -9,6 +9,11 @@
 <script>
 //import AddProduct from "@/conponents/AddProduct.vue"
 export default({
-     name:'AddProduct'
+     name:'AddProduct',
+     data(){
+         return{
+
+         }
+     }
 })
-</script>
+</script> 

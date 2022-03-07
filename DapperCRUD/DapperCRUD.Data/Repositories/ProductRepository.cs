@@ -18,10 +18,11 @@ namespace DapperCRUD.Data.Repositories
         public void Add(Product entity)
         {
             entity.Id = Connection.ExecuteScalar<int>(
-                "INSERT INTO Product(ProductName, Quantity, Price) VALUES(@ProductName, @Quantity, @Price); SELECT SCOPE_IDENTITY()",
+                "INSERT INTO Product(ProductName, Quantity, Price,LocalTime) VALUES(@ProductName, @Quantity, @Price, @LocalTime); SELECT SCOPE_IDENTITY()",
                 param: new { ProductName = entity.ProductName,
                              Quantity = entity.Quantity,
-                             Price = entity.Price},
+                             Price = entity.Price,
+                             LocalTime = entity.LocalTime},
                 transaction: Transaction
             );
         }

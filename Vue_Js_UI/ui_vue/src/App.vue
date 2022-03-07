@@ -1,18 +1,26 @@
 <template>
 <div id = "app">
-  <h1>Hello</h1>
-  <router-view/>
+  <h1>{{title}}</h1>
+<!-- <Product></Product> -->
+<AddProduct></AddProduct>
 </div>
 </template>
 
 <script>
 //import Product from './components/Product.vue'
+import AddProduct from './components/AddProduct.vue'
 
 export default {
   name: 'app',
-  // components: {
-  //   Product
-  // }
+  data(){
+    return{
+      title:'Allhu akber'
+    }
+  },
+  components: {
+  //  Product,
+    AddProduct
+  }
 }
 </script>
 

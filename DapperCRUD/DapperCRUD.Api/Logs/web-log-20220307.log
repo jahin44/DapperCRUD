@@ -1,0 +1,39 @@
+2022-03-07 10:47:23.904 +06:00 [INF] Application Starting up
+2022-03-07 10:47:43.330 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 11:31:04.182 +06:00 [INF] Application Starting up
+2022-03-07 13:37:47.695 +06:00 [INF] Application Starting up
+2022-03-07 13:39:14.096 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 16:14:25.195 +06:00 [INF] Application Starting up
+2022-03-07 16:15:08.088 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 16:28:52.443 +06:00 [INF] Application Starting up
+2022-03-07 16:29:13.209 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 16:31:18.139 +06:00 [INF] Application Starting up
+2022-03-07 16:31:42.336 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 16:42:14.252 +06:00 [INF] Application Starting up
+2022-03-07 16:42:29.555 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 17:03:30.273 +06:00 [INF] Application Starting up
+2022-03-07 17:03:57.369 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 17:07:35.867 +06:00 [INF] Application Starting up
+2022-03-07 17:08:54.374 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 17:10:01.415 +06:00 [INF] Application Starting up
+2022-03-07 17:10:30.185 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 17:11:46.016 +06:00 [INF] Application Starting up
+2022-03-07 17:12:03.440 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 18:00:15.428 +06:00 [INF] Application Starting up
+2022-03-07 18:00:36.716 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 18:05:16.677 +06:00 [INF] Application Starting up
+2022-03-07 18:05:36.692 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 18:06:55.254 +06:00 [INF] Application Starting up
+2022-03-07 18:06:59.686 +06:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - DapperCRUD.Api.Controllers.ProductController.Post (DapperCRUD.Api). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-03-07 18:08:11.157 +06:00 [INF] Application Starting up
+2022-03-07 18:08:32.068 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 18:14:18.928 +06:00 [INF] Application Starting up
+2022-03-07 18:14:30.355 +06:00 [WRN] Failed to determine the https port for redirect.
+2022-03-07 18:30:23.309 +06:00 [INF] Application Starting up
+2022-03-07 18:30:38.787 +06:00 [WRN] Failed to determine the https port for redirect.

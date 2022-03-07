@@ -2,6 +2,7 @@
 using DapperCRUD.Data.Entityes;
 using DapperCRUD.Data.UnitOfWorks;
 using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -18,7 +19,11 @@ namespace DapperCRUD.Api.Service
         }
 
         public void Add(Product product)
-        {
+        {   if (product == null)
+            {
+                throw new InvalidOperationException("Not enough data");
+            }
+
             _unitOfWork.ProductRepository.Add(product);
             _unitOfWork.Commit();
         }
@@ -32,6 +37,8 @@ namespace DapperCRUD.Api.Service
             table.Columns.Add("Product", typeof(string));
             table.Columns.Add("Quantity", typeof(int));
             table.Columns.Add("Price", typeof(int));
+            table.Columns.Add("LocalTime", typeof(string));
+
 
             foreach (var entity in entities)
             {
@@ -40,6 +47,7 @@ namespace DapperCRUD.Api.Service
                 row["Product"] = entity.ProductName.ToString();
                 row["Quantity"] = entity.Quantity;
                 row["Price"] = entity.Price;
+                row["LocalTime"] = entity.LocalTime;
                 table.Rows.Add(row);
             }
             return table;

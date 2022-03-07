@@ -2,6 +2,7 @@
 using DapperCRUD.Data.Entityes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -45,58 +46,58 @@ namespace DapperCRUD.Api.Controllers
         //}
 
         [HttpPost]
-        public string Post([FromBody] Product product)
+        public JsonResult Post([FromBody] Product product)
         {
+            product.LocalTime = DateTime.Now;
             if (ModelState.IsValid)
             {
                 try
                 {
                     _productService.Add(product);
-                    return "Done";
+                    return new JsonResult("success");
                 }
                 catch
                 {   
-                    return "ERROR" ;
+                    return new JsonResult("Error");
                 }
             }
-            else { return "Model Data Error"; }
+            else { return new JsonResult("model error"); }
         }
 
         [HttpPut]
-        public string Put([FromBody] Product product)
+        public JsonResult Put([FromBody] Product product)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
                     _productService.Update(product);
-                    return "Done";
+                    return new JsonResult("success");
                 }
                 catch
                 {
-                    return "ERROR";
+                    return new JsonResult("Error");
                 }
             }
-            else { return "Model Data Error"; }
+            else { return new JsonResult("Model Error"); }
         }
 
-        [HttpPost]
-        [Route("delete")]
-        public string Delete([FromBody] int Id)
+        [HttpDelete("{id}")]
+        public JsonResult Delete(int Id)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
                     _productService.Delete(Id);
-                    return "Done";
+                    return new JsonResult("success");
                 }
                 catch
                 {
-                    return "ERROR";
+                    return new JsonResult("Error");
                 }
             }
-            else { return "Model Data Error"; }
+            else { return new JsonResult("Model Error"); }
         }
     }
 }
