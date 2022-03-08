@@ -14,6 +14,7 @@ namespace DapperCRUD.Data.Entityes
         public string ProductName { get; set; }
         public int Quantity { get; set; }
         public int Price { get; set; }
+        public bool Available { get; set; }
         public DateTime LocalTime { get; set; }
     }
 }

@@ -37,6 +37,7 @@ namespace DapperCRUD.Api.Service
             table.Columns.Add("Product", typeof(string));
             table.Columns.Add("Quantity", typeof(int));
             table.Columns.Add("Price", typeof(int));
+            table.Columns.Add("Available", typeof(bool));
             table.Columns.Add("LocalTime", typeof(string));
 
 
@@ -47,6 +48,7 @@ namespace DapperCRUD.Api.Service
                 row["Product"] = entity.ProductName.ToString();
                 row["Quantity"] = entity.Quantity;
                 row["Price"] = entity.Price;
+                row["Available"] = entity.Available;
                 row["LocalTime"] = entity.LocalTime;
                 table.Rows.Add(row);
             }

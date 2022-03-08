@@ -18,10 +18,11 @@ namespace DapperCRUD.Data.Repositories
         public void Add(Product entity)
         {
             entity.Id = Connection.ExecuteScalar<int>(
-                "INSERT INTO Product(ProductName, Quantity, Price,LocalTime) VALUES(@ProductName, @Quantity, @Price, @LocalTime); SELECT SCOPE_IDENTITY()",
+                "INSERT INTO Product(ProductName, Quantity, Price,Available,LocalTime) VALUES(@ProductName, @Quantity, @Price, @Available, @LocalTime); SELECT SCOPE_IDENTITY()",
                 param: new { ProductName = entity.ProductName,
                              Quantity = entity.Quantity,
                              Price = entity.Price,
+                             Available=entity.Available,
                              LocalTime = entity.LocalTime},
                 transaction: Transaction
             );
@@ -30,7 +31,7 @@ namespace DapperCRUD.Data.Repositories
         public IEnumerable<Product> All()
         {
             return Connection.Query<Product>(
-                            "SELECT * FROM Product",
+                            "SELECT * FROM Product ORDER BY ProductName ASC",
                             transaction: Transaction
                         ).ToList();
         }
@@ -70,10 +71,12 @@ namespace DapperCRUD.Data.Repositories
         public void Update(Product entity)
         {
             Connection.Execute(
-                            "UPDATE Product SET ProductName = @ProductName, Quantity =@Quantity,Price =@Price WHERE Id = @Id",
+                            "UPDATE Product SET ProductName = @ProductName, Quantity =@Quantity,Price =@Price,Available =@Available,LocalTime =@LocalTime WHERE Id = @Id",
                             param: new { ProductName = entity.ProductName,
                                          Quantity = entity.Quantity, 
                                          Price= entity.Price,
+                                         Available= entity.Available,
+                                         LocalTime = entity.LocalTime,
                                          Id = entity.Id },
                             transaction: Transaction
                         );
