@@ -34,7 +34,7 @@ namespace DapperCRUD.Api.Service
             var table = new DataTable();
 
             table.Columns.Add("Id", typeof(int));
-            table.Columns.Add("Product", typeof(string));
+            table.Columns.Add("ProductName", typeof(string));
             table.Columns.Add("Quantity", typeof(int));
             table.Columns.Add("Price", typeof(int));
             table.Columns.Add("Available", typeof(bool));
@@ -45,7 +45,7 @@ namespace DapperCRUD.Api.Service
             {
                 var row = table.NewRow();
                 row["Id"] = entity.Id;
-                row["Product"] = entity.ProductName.ToString();
+                row["ProductName"] = entity.ProductName.ToString();
                 row["Quantity"] = entity.Quantity;
                 row["Price"] = entity.Price;
                 row["Available"] = entity.Available;

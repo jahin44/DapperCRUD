@@ -59,11 +59,11 @@ namespace DapperCRUD.Data.Repositories
             ).FirstOrDefault();
         }
 
-        public IEnumerable<Product> FindByName(string name)
+        public IEnumerable<Product> FindByName(string ProductName)
         {
             return Connection.Query<Product>(
-                            "SELECT * FROM Product WHERE ProductName = @ProductName",
-                            param: new { ProductName = name },
+                            "SELECT * FROM Product WHERE ProductName Like CONCAT('%',@ProductName,'%') ORDER BY ProductName ASC",
+                            param: new { ProductName = ProductName },
                             transaction: Transaction
                         ).ToList();
         }

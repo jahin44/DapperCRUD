@@ -39,11 +39,11 @@ namespace DapperCRUD.Api.Controllers
             return _productService.GetById(id);
         }
 
-        //[HttpGet("{productName}")]
-        //public IEnumerable<Product> Get(string ProductName, int Id)
-        //{
-        //    return _productService.GetByName(ProductName);
-        //}
+        [HttpGet("{ProductName},{Id}")]
+        public JsonResult Get(string ProductName,int Id)
+        {
+            return new JsonResult(_productService.GetByName(ProductName));
+        }
 
         [HttpPost]
         public JsonResult Post([FromBody] Product product)
