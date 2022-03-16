@@ -6,7 +6,7 @@ namespace DapperCRUD.Api
 {
     public interface IProductService
     {
-        DataTable GetAll();
+        IEnumerable<Product> GetAll();
         Product GetById(int id);
         IEnumerable<Product> GetByName(string productName);
         void Add(Product prod);

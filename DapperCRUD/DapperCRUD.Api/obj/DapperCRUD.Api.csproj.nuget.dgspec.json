@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj": {}
+    "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj": {}
   },
   "projects": {
-    "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj": {
+    "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj",
+        "projectUniqueName": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj",
         "projectName": "DapperCRUD.Api",
-        "projectPath": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj",
+        "projectPath": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\DapperCRUD.Api.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\obj\\",
+        "outputPath": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj": {
-                "projectPath": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj"
+              "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj": {
+                "projectPath": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj": {
+    "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
+        "projectUniqueName": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
         "projectName": "DapperCRUD.Data",
-        "projectPath": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
+        "projectPath": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\obj\\",
+        "outputPath": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

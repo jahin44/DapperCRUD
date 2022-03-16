@@ -2580,11 +2580,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
+      "projectUniqueName": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
       "projectName": "DapperCRUD.Data",
-      "projectPath": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
+      "projectPath": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\DapperCRUD.Data.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\BRACNet\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\obj\\",
+      "outputPath": "D:\\DapperCRUD\\DapperCRUD\\DapperCRUD.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

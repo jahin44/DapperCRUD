@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using DapperCRUD.Data.Base;
 using DapperCRUD.Data.Repositories;
 using DapperCRUD.Data.UnitOfWorks;
 using System;
@@ -29,7 +30,7 @@ namespace DapperCRUD.Data
                 .InstancePerLifetimeScope();
             builder.RegisterType<ProductRepository>().As<IProductRepository>()
                 .InstancePerLifetimeScope();
-            builder.RegisterType<Repository>().AsSelf()
+            builder.RegisterType<ProductRepository>().AsSelf()
                 .InstancePerLifetimeScope();
 
             base.Load(builder);

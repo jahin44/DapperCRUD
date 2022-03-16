@@ -82,7 +82,7 @@ namespace DapperCRUD.Api.Controllers
             else { return new JsonResult("Model Error"); }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{Id}")]
         public JsonResult Delete(int Id)
         {
             if (ModelState.IsValid)

@@ -13,43 +13,27 @@ namespace DapperCRUD.Data.UnitOfWorks
     {
         private IDbConnection _connection;
         private IDbTransaction _transaction;
-        private IProductRepository _productRepository;
         private bool _disposed;
 
         public UnitOfWork(string connectionString)
         {
             _connection = new SqlConnection(connectionString);
+        }
+
+        public void Commit(IDbTransaction _transaction)
+        {
             _connection.Open();
-            _transaction = _connection.BeginTransaction();
-        }
-
-        public IProductRepository ProductRepository
-        {
-            get { return _productRepository ?? (_productRepository = new ProductRepository(_transaction)); }
-        }
-
-        public void Commit()
-        {
             try
             {
                 _transaction.Commit();
+                _transaction.Dispose();
+
             }
             catch
             {
                 _transaction.Rollback();
                 throw;
             }
-            finally
-            {
-                _transaction.Dispose();
-                _transaction = _connection.BeginTransaction();
-                resetRepositories();
-            }
-        }
-
-        private void resetRepositories()
-        {
-            _productRepository = null;
         }
 
         public void Dispose()
