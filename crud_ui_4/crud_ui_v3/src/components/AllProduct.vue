@@ -1,4 +1,8 @@
 <template>
+<div class="c-dogs">
+    <div v-if="$wait.is('isLoading')">Loading...</div>
+    <div v-else>Ready to go!!</div>
+  
   <div class="list row">
     <div class="flex">
       <div class="mb-3 xl:w-60">
@@ -103,6 +107,7 @@
     </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -120,10 +125,12 @@ export default {
   },
   methods: {
     retrieveProducts() {
+      this.$wait.start("isLoading");
       ProductDataService.getAll()
         .then((response) => {
           this.products = response.data;
           console.log(response.data);
+         this.$wait.end("isLoading");
         })
         .catch((e) => {
           console.log(e);
@@ -153,10 +160,12 @@ export default {
     // },
 
     searchTitle() {
+      this.$wait.start("isLoading");
       ProductDataService.findByTitle(this.Product)
         .then((response) => {
           this.products = response.data;
           console.log(response.data);
+         this.$wait.end("isLoading");
         })
         .catch((e) => {
           console.log(e);

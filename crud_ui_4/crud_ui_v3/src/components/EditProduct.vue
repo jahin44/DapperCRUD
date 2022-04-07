@@ -1,4 +1,7 @@
 <template>
+<div class="c-dogs">
+    <div v-if="$wait.is('isLoading')">Loading...</div>
+    <div v-else>Ready to go!!</div>
   <div v-if="currentProduct" class="edit-form">
     <h4 class = "bg-sky-900 text-white">Product</h4>
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -73,6 +76,7 @@
   <div v-else>
     <br />
   </div>
+  </div>
 </template>
 
 <script>
@@ -88,10 +92,12 @@ export default {
   },
   methods: {
     getProduct(id) {
+      this.$wait.start("isLoading");
       ProductDataService.get(id)
         .then((response) => {
           this.currentProduct = response.data;
           console.log(response.data);
+          this.$wait.end("isLoading");
         })
         .catch((e) => {
           console.log(e);
@@ -117,12 +123,12 @@ export default {
     // },
 
     updateProduct() {
-            this.isLoading = true;
+      this.$wait.start("isLoading");
       ProductDataService.update(this.currentProduct.Id, this.currentProduct)
         .then((response) => {
           console.log(response.data);
           this.message = "The product was updated successfully!";
-                this.isLoading = false;
+         this.$wait.end("isLoading");
         })
         .catch((e) => {
           console.log(e);
@@ -130,12 +136,13 @@ export default {
     },
 
     deleteProduct() {
-      this.isLoading = true;
+      this.$wait.start("isLoading");
       ProductDataService.delete(this.currentProduct.Id)
         .then((response) => {
           console.log(response.data);
           this.$router.push({ name: "products" });
-                this.isLoading = false;
+        this.$wait.end("isLoading");
+
         })
         .catch((e) => {
           console.log(e);

@@ -1,4 +1,8 @@
 <template>
+<div class="c-dogs">
+    <div v-if="$wait.is('isLoading')">Loading...</div>
+    <div v-else>Ready to go!!</div>
+</div>
   <div class="submit-form">
     <div v-if="!submitted">
       <div class="form-group">
@@ -55,7 +59,6 @@ export default {
   name: "add-product",
   data() {
     return {
-      isLoading: false,
       product: {
         id: null,
         title: "",
@@ -67,6 +70,7 @@ export default {
   },
   methods: {
     saveProduct() {
+     this.$wait.start("isLoading");
       var data = {
         ProductName: this.product.ProductName,
         Quantity: this.product.Quantity,
@@ -80,6 +84,7 @@ export default {
           this.product.Id = response.data.Id;
           console.log(response.data);
           this.submitted = true;
+          this.$wait.end("isLoading");
         })
         .catch((e) => {
           console.log(e);
