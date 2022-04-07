@@ -1,5 +1,4 @@
 <template>
-  <LodingScreen :isLoading="isLoading"/>
   <div v-if="currentProduct" class="edit-form">
     <h4 class = "bg-sky-900 text-white">Product</h4>
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -78,32 +77,24 @@
 
 <script>
 import ProductDataService from "../service/ProductDataService";
-import LodingScreen from "../components/TheLoader.vue";
 
 export default {
   name: 'product-edit',
-  components: {
-    LodingScreen
-  },
   data() {
     return {
       currentProduct: null,
-      isLoading: false,
       message: "The product was Deleted successfully!",
     };
   },
   methods: {
     getProduct(id) {
-      this.isLoading = true;
       ProductDataService.get(id)
         .then((response) => {
           this.currentProduct = response.data;
           console.log(response.data);
-          this.isLoading = false;
         })
         .catch((e) => {
           console.log(e);
-          this.isLoading = false;
         });
     },
 

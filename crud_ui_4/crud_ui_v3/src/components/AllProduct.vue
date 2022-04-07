@@ -1,5 +1,4 @@
 <template>
-  <LodingScreen :isLoading="isLoading"/>
   <div class="list row">
     <div class="flex">
       <div class="mb-3 xl:w-60">
@@ -108,33 +107,25 @@
 
 <script>
 import ProductDataService from "../service/ProductDataService";
-import LodingScreen from "../components/TheLoader.vue";
 
 export default {
   name: "products-list",
-  components: {
-    LodingScreen
-  },
   data() {
     return {
       products: [],
       currentProduct: null,
       currentIndex: -1,
       Product: "",
-      isLoading: false
     };
   },
   methods: {
     retrieveProducts() {
-      this.isLoading = true;
       ProductDataService.getAll()
         .then((response) => {
           this.products = response.data;
           console.log(response.data);
-          this.isLoading = false;
         })
         .catch((e) => {
-          this.isLoading = false;
           console.log(e);
         });
     },

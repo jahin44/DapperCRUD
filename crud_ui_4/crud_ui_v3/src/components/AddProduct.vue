@@ -1,5 +1,4 @@
 <template>
-  <LodingScreen :isLoading="isLoading"/>
   <div class="submit-form">
     <div v-if="!submitted">
       <div class="form-group">
@@ -51,13 +50,9 @@
 
 <script>
 import ProductDataService from "../service/ProductDataService";
-import LodingScreen from "../components/TheLoader.vue";
 
 export default {
   name: "add-product",
-  components: {
-    LodingScreen
-  },
   data() {
     return {
       isLoading: false,
@@ -72,7 +67,6 @@ export default {
   },
   methods: {
     saveProduct() {
-      this.isLoading = true;
       var data = {
         ProductName: this.product.ProductName,
         Quantity: this.product.Quantity,
@@ -86,7 +80,6 @@ export default {
           this.product.Id = response.data.Id;
           console.log(response.data);
           this.submitted = true;
-          this.isLoading = false;
         })
         .catch((e) => {
           console.log(e);
@@ -96,8 +89,6 @@ export default {
     newProduct() {
       this.submitted = false;
       this.product = {};
-      this.isLoading = false;
-
     },
   },
 };
