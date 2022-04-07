@@ -17,6 +17,9 @@
 
 <script>
 export default {
-  name: "app"
+  name: "app",
+  mounted(){
+    this.$loading(true)
+  }
 };
 </script>

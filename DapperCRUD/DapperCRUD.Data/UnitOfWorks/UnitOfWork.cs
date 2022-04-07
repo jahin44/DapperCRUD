@@ -22,17 +22,20 @@ namespace DapperCRUD.Data.UnitOfWorks
 
         public void Commit(IDbTransaction _transaction)
         {
-            _connection.Open();
-            try
+            if (_connection.State == System.Data.ConnectionState.Closed)
             {
-                _transaction.Commit();
-                _transaction.Dispose();
+                _connection.Open();
+                try
+                {
+                    _transaction.Commit();
+                    _transaction.Dispose();
 
-            }
-            catch
-            {
-                _transaction.Rollback();
-                throw;
+                }
+                catch
+                {
+                    _transaction.Rollback();
+                    throw;
+                }
             }
         }
 

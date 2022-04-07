@@ -100,7 +100,7 @@ namespace DapperCRUD.Api.Service
         }
 
         public Product GetById(int Id)
-        {
+       {
             if (_connection.State == System.Data.ConnectionState.Closed)
             {
                 _connection.Open();
@@ -170,52 +170,6 @@ namespace DapperCRUD.Api.Service
             }
         }
 
-        /*public DataTable GetAll()
-        {
-            var entities = _unitOfWork.ProductRepository.All();
-            var table = new DataTable();
-
-            table.Columns.Add("Id", typeof(int));
-            table.Columns.Add("ProductName", typeof(string));
-            table.Columns.Add("Quantity", typeof(int));
-            table.Columns.Add("Price", typeof(int));
-            table.Columns.Add("Available", typeof(bool));
-            table.Columns.Add("LocalTime", typeof(string));
-
-
-            foreach (var entity in entities)
-            {
-                var row = table.NewRow();
-                row["Id"] = entity.Id;
-                row["ProductName"] = entity.ProductName.ToString();
-                row["Quantity"] = entity.Quantity;
-                row["Price"] = entity.Price;
-                row["Available"] = entity.Available;
-                row["LocalTime"] = entity.LocalTime;
-                table.Rows.Add(row);
-            }
-            return table;
-        }
-
-        public Product GetById(int id)
-        {
-            return _unitOfWork.ProductRepository.Find(id);
-        }
-        public IEnumerable<Product> GetByName(string productName)
-        {
-            return _unitOfWork.ProductRepository.FindByName(productName);
-        }
-
-        public void Delete(int id)
-        {
-            _unitOfWork.ProductRepository.Delete(id);
-            _unitOfWork.Commit();
-        }
-
-        public void Update(Product product)
-        {
-            _unitOfWork.ProductRepository.Update(product);
-            _unitOfWork.Commit();
-        }*/
+ 
     }
 }

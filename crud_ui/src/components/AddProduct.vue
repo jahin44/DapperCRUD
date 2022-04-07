@@ -79,6 +79,7 @@ export default {
           this.product.Id = response.data.Id;
           console.log(response.data);
           this.submitted = true;
+          this.$loading(false);
         })
         .catch((e) => {
           console.log(e);

@@ -5803,6 +5803,11 @@
   "resolved" "https://registry.npmjs.org/vue-axios/-/vue-axios-3.4.1.tgz"
   "version" "3.4.1"
 
+"vue-blockui@^1.1.7":
+  "integrity" "sha512-FkOqaXq/3VxfM5oAIu51XUWvIBxUvAV0MbiutoR8Wcdo19FPA4GTV13rpyTf2S/fRigFkLKCcJoW1JM19EYgsQ=="
+  "resolved" "https://registry.npmjs.org/vue-blockui/-/vue-blockui-1.1.7.tgz"
+  "version" "1.1.7"
+
 "vue-eslint-parser@^8.0.1":
   "integrity" "sha512-dzHGG3+sYwSf6zFBa0Gi9ZDshD7+ad14DGOdTLjruRVgZXe2J+DcZ9iUhyR48z5g1PqRa20yt3Njna/veLJL/g=="
   "resolved" "https://registry.npmmirror.com/vue-eslint-parser/-/vue-eslint-parser-8.3.0.tgz"
@@ -5860,6 +5865,11 @@
   "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
   "resolved" "https://registry.npmmirror.com/vue/-/vue-2.6.14.tgz"
   "version" "2.6.14"
+
+"vuejs-loading-plugin@^1.0.51":
+  "integrity" "sha512-iofgm9O1vir4JpU53K8dmYO3EfXUtelGNdkv4nBR80S7RuVIP/vn69IFFhy90ISQhB7VZH4seUuHaBqTVbKGAA=="
+  "resolved" "https://registry.npmjs.org/vuejs-loading-plugin/-/vuejs-loading-plugin-1.0.51.tgz"
+  "version" "1.0.51"
 
 "watchpack@^2.3.1":
   "integrity" "sha512-x0t0JuydIo8qCNctdDrn1OzH/qDzk2+rdCOC3YzumZ42fiMqmQ7T3xQurykYMhYfHaPHTp4ZxAx2NfUo1K6QaA=="

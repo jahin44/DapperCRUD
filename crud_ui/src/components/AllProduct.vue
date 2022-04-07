@@ -25,6 +25,9 @@
           {{ product.ProductName}}
         </li>
       </ul>
+    <div style="height: 20vh">
+
+    </div>
 
       <!-- <button class="m-3 btn btn-sm btn-danger" @click="removeAllProducts">
         Remove All
@@ -80,6 +83,7 @@ export default {
         .then(response => {
           this.products = response.data;
           console.log(response.data);
+          this.$loading(false);
         })
         .catch(e => {
           console.log(e);
@@ -112,7 +116,8 @@ export default {
       ProductDataService.findByTitle(this.Product)
         .then(response => {
           this.products = response.data;
-          console.log(response.data);
+          console.log(response.data); 
+          this.$loading(false);
         })
         .catch(e => {
           console.log(e);

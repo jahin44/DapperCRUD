@@ -142,6 +142,7 @@ export default {
   mounted() {
     this.message = "";
     this.getProduct(this.$route.params.id);
+    this.$loading(false);
   },
 };
 </script>
