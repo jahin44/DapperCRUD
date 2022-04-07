@@ -1016,11 +1016,6 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@meforma/vue-wait-for@^0.0.2":
-  "integrity" "sha512-1gKyZfBRUpB22qjxQjbAu1X9ZfpfeG/I8o/+UXTg4EJc4rgBY2sOMYxaZciqauIu6/ca5YZZXhYZV7qLd12ooA=="
-  "resolved" "https://registry.npmjs.org/@meforma/vue-wait-for/-/vue-wait-for-0.0.2.tgz"
-  "version" "0.0.2"
-
 "@node-ipc/js-queue@2.0.3":
   "integrity" "sha512-fL1wpr8hhD5gT2dA1qifeVaoDFlQR5es8tFuKqjHX+kdOtdNHnxkVZbtIrR2rxnMFvehkjaZRNV2H/gPXlb0hw=="
   "resolved" "https://registry.npmmirror.com/@node-ipc/js-queue/-/js-queue-2.0.3.tgz"
