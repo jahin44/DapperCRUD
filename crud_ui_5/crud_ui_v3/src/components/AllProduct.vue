@@ -1,4 +1,6 @@
 <template>
+<Jumper size="60" color="#FF3E00" unit="px" duration="1s"></Jumper>
+
   <div class="list row">
     <div class="flex">
       <div class="mb-3 xl:w-60">
@@ -94,7 +96,8 @@
             <label><strong>Available:</strong></label
             >YES
           </div>
-          <div v-if="currentProduct.Available === false">
+          <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+           v-if="currentProduct.Available === false">
             <label><strong>Available:</strong></label
             >NO
           </div>
@@ -115,9 +118,11 @@
 
 <script>
 import ProductDataService from "../service/ProductDataService";
+import { Jumper } from 'svelte-loading-spinners';
 
 export default {
   name: "products-list",
+  Comment: {Jumper},
   data() {
     return {
       products: [],

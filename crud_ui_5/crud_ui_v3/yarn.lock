@@ -5185,11 +5185,6 @@
   dependencies:
     "picomatch" "^2.2.1"
 
-"reflect-metadata@^0.1.10":
-  "integrity" "sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg=="
-  "resolved" "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.13.tgz"
-  "version" "0.1.13"
-
 "regenerate-unicode-properties@^10.0.1":
   "integrity" "sha512-vn5DU6yg6h8hP/2OkQo3K7uVILvY4iu0oI4t3HFa81UPkhGJwkRwM10JEc3upjdhHjs/k8GJY1sRBhk5sr69Bw=="
   "resolved" "https://registry.npmmirror.com/regenerate-unicode-properties/-/regenerate-unicode-properties-10.0.1.tgz"
@@ -6047,11 +6042,6 @@
   "resolved" "https://registry.npmjs.org/vue-axios/-/vue-axios-3.4.1.tgz"
   "version" "3.4.1"
 
-"vue-class-component@^6.0.0", "vue-class-component@^6.1.0":
-  "integrity" "sha512-cH208IoM+jgZyEf/g7mnFyofwPDJTM/QvBNhYMjqGB8fCsRyTf68rH2ISw/G20tJv+5mIThQ3upKwoL4jLTr1A=="
-  "resolved" "https://registry.npmjs.org/vue-class-component/-/vue-class-component-6.3.2.tgz"
-  "version" "6.3.2"
-
 "vue-cli-plugin-tailwind@~3.0.0":
   "integrity" "sha512-bUWjfwGtJCeBU7pL4lD86RC+HsJAmAlYqr8e65NGC3q/ZBzC9KQs1Iy/vTyfDTnB7ZJm3huB+1a/m+17fdMZ8A=="
   "resolved" "https://registry.npmjs.org/vue-cli-plugin-tailwind/-/vue-cli-plugin-tailwind-3.0.0.tgz"
@@ -6084,23 +6074,6 @@
     "hash-sum" "^2.0.0"
     "loader-utils" "^2.0.0"
 
-"vue-loading-template@^1.3.2":
-  "integrity" "sha512-p02Q0cIkGlYSd2B++9JkRnSi4vzbIy3Pd7HOPncFCT5sgXin0clJFCvO8+KqF3JYP+coR8BjMqFEjOJY20jKYA=="
-  "resolved" "https://registry.npmjs.org/vue-loading-template/-/vue-loading-template-1.3.2.tgz"
-  "version" "1.3.2"
-  dependencies:
-    "vue" "^2.5.16"
-    "vue-class-component" "^6.0.0"
-    "vue-property-decorator" "^6.0.0"
-
-"vue-property-decorator@^6.0.0":
-  "integrity" "sha512-NM4PYPOkOIO7SFtWiQqVrbp+ORzd7CJXcIz0X710PNW9pxGfbil0/x/ULFympzIUoHXBKN2dqoOQzh6oeMzpTQ=="
-  "resolved" "https://registry.npmjs.org/vue-property-decorator/-/vue-property-decorator-6.1.0.tgz"
-  "version" "6.1.0"
-  dependencies:
-    "reflect-metadata" "^0.1.10"
-    "vue-class-component" "^6.1.0"
-
 "vue-router@^4.0.13":
   "integrity" "sha512-LmXrC+BkDRLak+d5xTMgUYraT3Nj0H/vCbP+7usGvIl9Viqd1UP6AsP0i69pSbn9O0dXK/xCdp4yPw21HqV9Jw=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-4.0.13.tgz"
@@ -6131,11 +6104,6 @@
     "@vue/runtime-dom" "3.2.31"
     "@vue/server-renderer" "3.2.31"
     "@vue/shared" "3.2.31"
-
-"vue@^2.5.16":
-  "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
-  "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
-  "version" "2.6.14"
 
 "watchpack@^2.3.1":
   "integrity" "sha512-x0t0JuydIo8qCNctdDrn1OzH/qDzk2+rdCOC3YzumZ42fiMqmQ7T3xQurykYMhYfHaPHTp4ZxAx2NfUo1K6QaA=="
