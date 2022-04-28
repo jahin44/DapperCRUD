@@ -87,7 +87,7 @@
           <label><strong>Available:</strong></label
           >YES
         </div>
-        <div v-if="currentProduct.Available === false">
+        <div class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" v-if="currentProduct.Available === false">
           <label><strong>Available:</strong></label
           >NO
         </div>
@@ -108,7 +108,7 @@
 
 <script>
 import ProductDataService from "../service/ProductDataService";
-import LodingScreen from "../components/TheLoader.vue";
+ import LodingScreen from "../components/TheLoader.vue";
 
 export default {
   name: "products-list",

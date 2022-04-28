@@ -1,12 +1,16 @@
 <template>
 <div :class="{ loader: true, fadeout: !isLoading }"> 
   <div class="loading-box">
-    <div class="lds-ellipsis">
+    <div class="lds-roller">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
-    </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      </div>
   </div>
   </div>
 </template>
@@ -17,13 +21,13 @@ export default{
   props: ["isLoading"]
 };
 </script>
-
+ 
 <style scoped>
 .loading-box{
   position: fixed;
   width: 100%;
   height: 100%;
-  margin: auto;
+  margin: auto; 
   background :#ffffff;
   z-index: 999;
   left: 0px;
@@ -32,7 +36,7 @@ export default{
   padding: 10px;
 }
 .fadeout {
-  animation: fadeout 2s forwards;
+  animation: fadeout 1s forwards;
 }
 
 @keyframes fadeout {
@@ -41,60 +45,104 @@ export default{
     visibility: hidden;
   }
 }
-.lds-ellipsis {
+.lds-roller {
+  top : 40%;
   display: inline-block;
   position: relative;
-  left:10%;
-  top:40%;
-  margin: -25% 0 0 -25%;
+  width: 80px;
+  height: 80px;
 }
-.lds-ellipsis div {
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
   position: absolute;
-  top: 50%;
-  width: 13px;
-  height: 13px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: #880808	;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  margin: -4px 0 0 -4px;
 }
-.lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+  background: rgb(106, 99, 182);
 }
-.lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
+.lds-roller div:nth-child(1):after {
+  background: rgb(106, 99, 182);
+  top: 63px;
+  left: 63px;
 }
-.lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+  background: rgb(99, 124, 181);
 }
-.lds-ellipsis div:nth-child(4) {
+.lds-roller div:nth-child(2):after {
+  top: 68px;
   left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
+  background: rgb(99, 124, 181);
 }
-@keyframes lds-ellipsis1 {
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+  background: rgb(100, 146, 172);
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+  background: rgb(100, 146, 172);
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+  background: rgb(132, 155, 135);
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+  background: rgb(132, 155, 135);
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+  background: rgb(171, 189, 129);
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+  background: rgb(171, 189, 129);
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+  background: rgb(248, 178, 106);
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+  background: rgb(248, 178, 106);
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+  background: rgb(244, 126, 96);
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+  background: rgb(244, 126, 96);
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+  background: rgb(225, 91, 100);
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+  background: rgb(225, 91, 100);
+}
+@keyframes lds-roller {
   0% {
-    transform: scale(0);
+    transform: rotate(0deg);
   }
   100% {
-    transform: scale(1);
-  }
-}
-@keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
+    transform: rotate(360deg);
   }
 }
 </style>
